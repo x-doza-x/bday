@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe6f0 0%, #ffd6e7 50%, #ffe 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.8) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,230,240,0.6) 0%, transparent 40%);
+  z-index: -1;
+}
+
+.content {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #d6336c;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cake-container {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.cake {
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ff69b4, #ff8fab);
+  border-radius: 10px 10px 0 0;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+  box-shadow: 
+    0 10px 0 #e64980,
+    0 20px 0 #ff69b4,
+    0 30px 0 #e64980,
+    0 30px 0 #ff69b4;
+}
+
+.cake::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #ffb6c1;
+  top: -10px;
+  left: -1px;
+  border-radius: 10px 10px 0 0;
+}
+
+.candle {
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(to right, #fff, #f8f8f8, #fff);
+  margin: 0 auto;
+  position: relative;
+  top: -60px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.flame {
+  width: 15px;
+  height: 25px;
+  background: linear-gradient(to top, orange, yellow);
+  border-radius: 50% 50% 20% 20%;
+  position: absolute;
+  top: -25px;
+  left: -2.5px;
+  box-shadow: 
+    0 0 10px orange,
+    0 0 20px yellow,
+    0 0 30px white;
+  animation: flicker 0.5s infinite alternate;
+  filter: blur(1px);
+  transform-origin: bottom center;
+}
+
+@keyframes flicker {
+  0%, 100% { 
+    transform: scale(1) rotate(-2deg); 
+    opacity: 0.9;
+  }
+  20% { 
+    transform: scale(1.1) rotate(3deg); 
+    opacity: 1;
+  }
+  40% { 
+    transform: scale(0.95) rotate(-3deg); 
+  }
+  60% { 
+    transform: scale(1.05) rotate(2deg); 
+  }
+  80% { 
+    transform: scale(0.98) rotate(-1deg); 
+  }
+}
+
+canvas {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
