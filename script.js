@@ -6,7 +6,7 @@ canvas.height = window.innerHeight;
 let confetti = [];
 
 function createConfetti() {
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 50; i++) {
     confetti.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height - canvas.height,
